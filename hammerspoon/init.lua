@@ -545,59 +545,57 @@ end))
 -- end))
 
 hs.hotkey.bind({'cmd'}, '5', (function()
-  hs.application.launchOrFocus('Station')
-  -- hs.application.launchOrFocus('Notion')
-  --hs.application.launchOrFocus('Notes')
+  hs.application.launchOrFocus('Notion')
+
+  -- if hs.application.get('Notion') then
+  --   hs.application.launchOrFocus('Notion')
+  -- elseif hs.application.get('Franz') then
+  --   hs.application.launchOrFocus('Franz')
+  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
+  -- end
 end))
 
 hs.hotkey.bind({'cmd'}, '6', (function()
-  -- hs.application.launchOrFocus('Notion') -- or Notes or Typora ? ^^
+  -- hs.application.launchOrFocus('Franz')
+  -- hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
 end))
 
 hs.hotkey.bind({'cmd'}, '7', (function()
-  -- if franz is here, focus first
-  if hs.application.get('Station') then
-    hs.application.launchOrFocus('Station')
-  elseif hs.application.get('Slack') then
-    hs.application.launchOrFocus('Slack')
+  if hs.application.get('Franz') then
+    hs.application.launchOrFocus('Franz')
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Slack'})
   elseif hs.application.get('Sblack') then
     hs.application.launchOrFocus('Sblack')
   else
-    -- default
     hs.application.launchOrFocus('Sblack')
   end
 end))
 
 hs.hotkey.bind({'option'}, '7', (function()
-  if hs.application.get('Station') then
-    hs.application.launchOrFocus('Station')
+  if hs.application.get('Franz') then
+    hs.application.launchOrFocus('Franz')
+    hs.application.get('Franz'):selectMenuItem({'Services', 'WhatsApp'})
   else
     hs.application.launchOrFocus('WhatsApp')
   end
 end))
 
--- hs.hotkey.bind({'cmd', 'option'}, '7', (function()
---   hs.application.launchOrFocus('Messages')
--- end))
+hs.hotkey.bind({'option'}, '8', (function()
+  hs.application.launchOrFocus('Calendar')
+end))
 
 hs.hotkey.bind({'cmd'}, '8', (function()
-  if hs.application.get('Station') then
-    hs.application.launchOrFocus('Station')
-  else
-    hs.application.launchOrFocus('Calendar')
-  end
+  hs.application.launchOrFocus('Franz')
+  hs.application.get('Franz'):selectMenuItem({'Services', 'Google Calendar'})
 end))
 
 hs.hotkey.bind({'cmd'}, '9', (function()
-  -- hs.application.launchOrFocus('Postbox') -- too basic, design not so cool, search sux, no snooze
-  if hs.application.get('Station') then
-    hs.application.launchOrFocus('Station')
+  if hs.application.get('Franz') then
+    hs.application.launchOrFocus('Franz')
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail'})
   else
     hs.application.launchOrFocus('Airmail 3')
   end 
-  -- hs.application.launchOrFocus('Franz') -- removed 12.11.2018
-  -- hs.application.launchOrFocus('Mail') -- dark Apple Mail.. meh?
-  -- hs.application.launchOrFocus('Polymail') -- sux
 end))
 
 -- display Liip hours
@@ -1036,7 +1034,7 @@ require('clipboard')
 -- ----------------------------------------------------------------------------
 -- Everything is done, display done message
 -- ----------------------------------------------------------------------------
-hs.alert('� Hammerspoon config loaded �')
+hs.alert('Hammerspoon config loaded ⌨️')
 
 
 
