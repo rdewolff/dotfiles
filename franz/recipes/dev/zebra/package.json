@@ -1,0 +1,14 @@
+{
+  "id": "zebra",
+  "name": "Zebra",
+  "version": "1.0.0",
+  "description": "Liip Zebra",
+  "main": "index.js",
+  "author": "Romain de Wolff <rdewolff@pm.com>",
+  "license": "MIT",
+  "repository": "https://github.com/rdewolff/recipe-zebra",
+  "config": {
+    "serviceURL": "https://zebra.liip.ch",
+    "hasNotificationSound": true
+  }
+}
