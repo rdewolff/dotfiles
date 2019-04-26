@@ -295,6 +295,7 @@
                         "manipulators": [
                             {
                                 "description": "Printscreen (old space) as fn",
+<<<<<<< HEAD
                                 "from": {
                                     "key_code": "print_screen",
                                     "modifiers": {
@@ -321,6 +322,8 @@
                         "manipulators": [
                             {
                                 "description": "MacOS CH-FR closer to EN-US",
+=======
+>>>>>>> 5b7e8e03ad19d2cda0a92f8d036ffabfb10c5104
                                 "from": {
                                     "key_code": "§",
                                     "modifiers": {
@@ -338,7 +341,11 @@
                         ]
                     },
                     {
+<<<<<<< HEAD
                         "description": "FN to MEDIA à la mac better keys",
+=======
+                        "description": "FN to MEDIA à la mac with better keys",
+>>>>>>> 5b7e8e03ad19d2cda0a92f8d036ffabfb10c5104
                         "manipulators": [
                             {
                                 "from": {
@@ -441,7 +448,7 @@
                         ]
                     },
                     {
-                        "description": "Hyper Navigation",
+                        "description": "Hyper Selective VIM",
                         "manipulators": [
                             {
                                 "from": {
@@ -559,6 +566,99 @@
                                 "to": [
                                     {
                                         "key_code": "page_down"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "right_command",
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "right_command",
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "right_command",
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter",
+                                        "modifiers": [
+                                            "left_gui"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },{
+                        "description": "Hyper Additional Usefull Keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "right_command",
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
