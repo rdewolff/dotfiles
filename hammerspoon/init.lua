@@ -556,8 +556,10 @@ hs.hotkey.bind({'cmd'}, '5', (function()
 end))
 
 hs.hotkey.bind({'cmd'}, '6', (function()
-  -- hs.application.launchOrFocus('Franz')
-  -- hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
+  if hs.application.get('Franz') then
+    hs.application.launchOrFocus('Franz')
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
+  end
 end))
 
 hs.hotkey.bind({'cmd'}, '7', (function()
@@ -587,6 +589,15 @@ end))
 hs.hotkey.bind({'cmd'}, '8', (function()
   hs.application.launchOrFocus('Franz')
   hs.application.get('Franz'):selectMenuItem({'Services', 'Google Calendar'})
+end))
+
+hs.hotkey.bind({'option'}, '9', (function()
+  if hs.application.get('Franz') then
+    hs.application.launchOrFocus('Franz')
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail Private'})
+  else
+    hs.application.launchOrFocus('Airmail 3')
+  end 
 end))
 
 hs.hotkey.bind({'cmd'}, '9', (function()

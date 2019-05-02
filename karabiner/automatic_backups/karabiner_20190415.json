@@ -295,7 +295,6 @@
                         "manipulators": [
                             {
                                 "description": "Printscreen (old space) as fn",
-<<<<<<< HEAD
                                 "from": {
                                     "key_code": "print_screen",
                                     "modifiers": {
@@ -322,8 +321,6 @@
                         "manipulators": [
                             {
                                 "description": "MacOS CH-FR closer to EN-US",
-=======
->>>>>>> 5b7e8e03ad19d2cda0a92f8d036ffabfb10c5104
                                 "from": {
                                     "key_code": "§",
                                     "modifiers": {
@@ -341,11 +338,7 @@
                         ]
                     },
                     {
-<<<<<<< HEAD
-                        "description": "FN to MEDIA à la mac better keys",
-=======
                         "description": "FN to MEDIA à la mac with better keys",
->>>>>>> 5b7e8e03ad19d2cda0a92f8d036ffabfb10c5104
                         "manipulators": [
                             {
                                 "from": {
