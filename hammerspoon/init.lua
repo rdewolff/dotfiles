@@ -490,6 +490,8 @@ hs.hotkey.bind({'cmd'}, '3', (function()
   -- focus on the current running browser (first get first focus)
   if hs.application.get('Firefox Developer Edition') then
     hs.application.launchOrFocus('Firefox Developer Edition')
+  elseif hs.application.get('Firefox Nightly') then
+    hs.application.launchOrFocus('Firefox Nightly')
   elseif hs.application.get('Google Chrome') then
     hs.application.launchOrFocus('Google Chrome')
   elseif hs.application.get('Brave') then
@@ -594,7 +596,7 @@ end))
 hs.hotkey.bind({'option'}, '9', (function()
   if hs.application.get('Franz') then
     hs.application.launchOrFocus('Franz')
-    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail Private'})
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 2'})
   else
     hs.application.launchOrFocus('Airmail 3')
   end 
@@ -603,7 +605,7 @@ end))
 hs.hotkey.bind({'cmd'}, '9', (function()
   if hs.application.get('Franz') then
     hs.application.launchOrFocus('Franz')
-    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail'})
+    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 1'})
   else
     hs.application.launchOrFocus('Airmail 3')
   end 
