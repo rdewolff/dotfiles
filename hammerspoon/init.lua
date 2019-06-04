@@ -547,8 +547,13 @@ end))
 -- end))
 
 hs.hotkey.bind({'cmd'}, '5', (function()
-  hs.application.launchOrFocus('Notion')
-
+    hs.application.launchOrFocus('Notion')
+  -- if hs.application.get('Notion') then
+  --   hs.application.launchOrFocus('Notion')
+  -- elseif hs.application.get('Franz') then
+  --   hs.application.launchOrFocus('Franz')
+  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
+  -- end
   -- if hs.application.get('Notion') then
   --   hs.application.launchOrFocus('Notion')
   -- elseif hs.application.get('Franz') then
@@ -589,26 +594,29 @@ hs.hotkey.bind({'option'}, '8', (function()
 end))
 
 hs.hotkey.bind({'cmd'}, '8', (function()
-  hs.application.launchOrFocus('Franz')
-  hs.application.get('Franz'):selectMenuItem({'Services', 'Google Calendar'})
+  -- hs.application.launchOrFocus('Franz')
+  -- hs.application.get('Franz'):selectMenuItem({'Services', 'Google Calendar'})
+  hs.application.launchOrFocus('Google Calendar')
 end))
 
 hs.hotkey.bind({'option'}, '9', (function()
-  if hs.application.get('Franz') then
-    hs.application.launchOrFocus('Franz')
-    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 2'})
-  else
-    hs.application.launchOrFocus('Airmail 3')
-  end 
+  -- if hs.application.get('Franz') then
+  --   hs.application.launchOrFocus('Franz')
+  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 2'})
+  -- else
+  --   hs.application.launchOrFocus('Airmail 3')
+  -- end 
+  hs.application.launchOrFocus('Airmail 3')
 end))
 
 hs.hotkey.bind({'cmd'}, '9', (function()
-  if hs.application.get('Franz') then
-    hs.application.launchOrFocus('Franz')
-    hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 1'})
-  else
-    hs.application.launchOrFocus('Airmail 3')
-  end 
+  -- if hs.application.get('Franz') then
+  --   hs.application.launchOrFocus('Franz')
+  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 1'})
+  -- else
+  --   hs.application.launchOrFocus('Airmail 3')
+  -- end 
+  hs.application.launchOrFocus('Gmail')
 end))
 
 -- display Liip hours
