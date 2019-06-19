@@ -6,12 +6,26 @@
 " Vim Cheat Sheet : https://vim.rtorr.com
 
 syntax on
-colorscheme atom-dark
+colorscheme monokai
 set t_Co=256
 set background=dark
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set guifont=Menlo:h14
+
+
+
+"
+" standard 
+" filetype plugin indent on    " required 
+" To ignore plugin indent changes, instead use:
+" filetype plugin on"
+
+"
+"
+" The plugins instlaled below require https://github.com/VundleVim/Vundle.vim
+"
+"
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,6 +33,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+" Taxi.vim - Liip timetracker
+Plugin 'schtibe/taxi.vim'
+
+
 
 " plugin on GitHub repo
 " Git plugin not hosted on GitHub
@@ -44,7 +63,7 @@ Plugin 'vim-scripts/SyntaxComplete'
 Plugin 'kien/ctrlp.vim'
 
 " Indent Line
-Plugin 'yggdroot/indentline'
+" Plugin 'yggdroot/indentline'
 
 "Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'othree/yajs.vim'
@@ -53,16 +72,16 @@ Plugin 'yggdroot/indentline'
 
 " Easymotion to jump around
 " Buggy with Nerd Tree ?
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 
 " Vim git gutter
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 
 " ES6 Snippets and syntax highlighting
-Plugin 'garbas/vim-snipmate' " requirement
-Plugin 'SirVer/ultisnips'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate' " requirement
+"Plugin 'SirVer/ultisnips'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
 Plugin 'isruslan/vim-es6'
 
 " JSON support
@@ -96,11 +115,9 @@ Plugin 'matchit.zip'
 "Plugin 'Valloric/YouCompleteMe' " Needs Vim 7.4+
 "Plugin 'marijnh/tern_for_vim'
 
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 " Configure pangloss/vim-javascript 
 let g:javascript_plugin_jsdoc = 1 " Enables syntax highlighting for JSDocs.
@@ -134,9 +151,9 @@ map <Leader>q :NERDTreeToggle<CR>
 " Snipet and ES6 highlight config
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Async Lint Engine config
 let &runtimepath.=',~/.vim/bundle/ale'
@@ -154,4 +171,3 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k)
-
