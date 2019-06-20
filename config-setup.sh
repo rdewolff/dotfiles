@@ -34,3 +34,7 @@ code --install-extension Shan.code-settings-sync
 
 # Open the folder of Firefox
 open ~/Library/Application Support/Firefox/Profiles
+
+# Config git
+git config --global user.email "rdewolff@gmail.com"
+git config --global user.name "Romain de Wolff"
