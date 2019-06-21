@@ -113,3 +113,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mm='cd ~/Projects/meetme/dev/meetme-mobile'
 export PATH="/usr/local/sbin:$PATH"
+
+# Taxi for Liip Time tracking
+export PATH="$PATH:/Users/rdewolff/Library/Python/2.7/bin"
