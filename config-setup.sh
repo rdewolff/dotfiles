@@ -34,6 +34,8 @@ code --install-extension Shan.code-settings-sync
 
 # Open the folder of Firefox
 open ~/Library/Application Support/Firefox/Profiles
+open ~/Projects/dotfiles/firefox/
+echo "You need to manually copy the folder 'chrome' with userChrome.css in your firefox profile"
 
 # Config git
 git config --global user.email "rdewolff@gmail.com"
