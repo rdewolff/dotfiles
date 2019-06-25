@@ -91,8 +91,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 # Do not use natural scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-# Make Chrome Two finger swipe for back and forward
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -401,13 +399,16 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
 
+# Make Chrome Two finger swipe for back and forward
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool true
+
 # Disable the all too sensitive backswipe on trackpads
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+# defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+# defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Disable the all too sensitive backswipe on Magic Mouse
-defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
+# defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
+# defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
 
 # Use the system-native print preview dialog
 # defaults write com.google.Chrome DisablePrintPreview -bool true
