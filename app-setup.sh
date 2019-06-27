@@ -55,7 +55,7 @@ brew cleanup
 # Oh my ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# use Zsh as 
+# use Zsh as bash shell
 
 # Folder
 mkdir -p ~/Projects/
@@ -74,3 +74,6 @@ npm install -g react-native-cli
 
 # Ignite CLI
 yarn global add ignite-cli
+
+# Install Cocoa Pods
+sudo gem install cocoapods
