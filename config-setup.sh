@@ -33,7 +33,10 @@ code --install-extension Shan.code-settings-sync
 
 
 # Open the folder of Firefox
-open ~/Library/Application Support/Firefox/Profiles
+# laucnh Firefox first to ensure the `Profiles` folder does exist
+open -a /Applications/Firefox.app
+# open the cofnig folder
+open ~/Library/Application\ Support/Firefox/Profiles
 open ~/Projects/dotfiles/firefox/
 echo "You need to manually copy the folder 'chrome' with userChrome.css in your firefox profile"
 

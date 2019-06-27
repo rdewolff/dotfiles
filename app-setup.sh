@@ -29,13 +29,15 @@ brew cask install skitch
 brew cask install slack
 brew cask install visual-studio-code
 brew cask install whatsapp
+brew cask install spotify
 brew cask install reactotron
-brew install font-fira-code
+brew cask install font-fira-code
 brew tap homebrew/cask-drivers
 brew cask install itsycal # small calendar in the menu bar
 
 # The Command Line Tools Package
 xcode-select --install
+# this might be already installed as we use `git` to clone this repo
 
 # Mac App Store command line interface
 brew install mas
