@@ -502,7 +502,9 @@ hs.hotkey.bind({'cmd'}, '3', (function()
     hs.application.launchOrFocus('qutebrowser')
   elseif hs.application.get('Safari') then
     hs.application.launchOrFocus('Safari')
-  else
+  elseif hs.application.get('Vivaldi') then
+    hs.application.launchOrFocus('Vivaldi')
+  else 
     -- default if none running
     hs.application.launchOrFocus('Firefox')
   end
@@ -573,10 +575,12 @@ hs.hotkey.bind({'cmd'}, '7', (function()
   if hs.application.get('Franz') then
     hs.application.launchOrFocus('Franz')
     hs.application.get('Franz'):selectMenuItem({'Services', 'Slack'})
+  elseif hs.application.get('Slack') then 
+    hs.application.launchOrFocus('Slack')
   elseif hs.application.get('Sblack') then
     hs.application.launchOrFocus('Sblack')
   else
-    hs.application.launchOrFocus('Sblack')
+    hs.application.launchOrFocus('Slack')
   end
 end))
 
@@ -616,7 +620,7 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   -- else
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
-  hs.application.launchOrFocus('Gmail')
+  -- hs.application.launchOrFocus('Gmail')
 end))
 
 -- display Liip hours
