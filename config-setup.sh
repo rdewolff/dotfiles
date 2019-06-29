@@ -20,6 +20,8 @@ ln -s ~/Projects/dotfiles/zsh/.zshrc ~/.zshrc
 
 # Config iterm2
 # cf : http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/
+# can this work without launching iterm2 first?
+open -a /Applications/iTerm.app
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Projects/dotfiles/iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
