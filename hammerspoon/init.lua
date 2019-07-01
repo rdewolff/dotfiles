@@ -506,7 +506,7 @@ hs.hotkey.bind({'cmd'}, '3', (function()
     hs.application.launchOrFocus('Vivaldi')
   else 
     -- default if none running
-    hs.application.launchOrFocus('Firefox')
+    hs.application.launchOrFocus('Vivaldi')
   end
 end))
 
@@ -659,10 +659,10 @@ hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'r', (function()
 end))
 
 -- show the console
-hs.hotkey.bind({'cmd'}, '`', (function()
+-- hs.hotkey.bind({'cmd'}, '`', (function()
   --hs.alert('Hammerspoon console')
-  hs.openConsole()
-end))
+  -- hs.openConsole()
+-- end))
 
 -- Suppress EJECT key
 hs.eventtap.new({ hs.eventtap.event.types.NSSystemDefined }, function(event)
