@@ -548,28 +548,28 @@ end))
 --   hs.application.launchOrFocus('Typora')
 -- end))
 
-hs.hotkey.bind({'cmd'}, '5', (function()
-    hs.application.launchOrFocus('Notion')
-  -- if hs.application.get('Notion') then
-  --   hs.application.launchOrFocus('Notion')
-  -- elseif hs.application.get('Franz') then
-  --   hs.application.launchOrFocus('Franz')
-  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
-  -- end
-  -- if hs.application.get('Notion') then
-  --   hs.application.launchOrFocus('Notion')
-  -- elseif hs.application.get('Franz') then
-  --   hs.application.launchOrFocus('Franz')
-  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
-  -- end
-end))
+-- hs.hotkey.bind({'cmd'}, '5', (function()
+--     hs.application.launchOrFocus('Notion')
+--   -- if hs.application.get('Notion') then
+--   --   hs.application.launchOrFocus('Notion')
+--   -- elseif hs.application.get('Franz') then
+--   --   hs.application.launchOrFocus('Franz')
+--   --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
+--   -- end
+--   -- if hs.application.get('Notion') then
+--   --   hs.application.launchOrFocus('Notion')
+--   -- elseif hs.application.get('Franz') then
+--   --   hs.application.launchOrFocus('Franz')
+--   --   hs.application.get('Franz'):selectMenuItem({'Services', 'Notion'})
+--   -- end
+-- end))
 
-hs.hotkey.bind({'cmd'}, '6', (function()
-  if hs.application.get('Franz') then
-    hs.application.launchOrFocus('Franz')
-    hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
-  end
-end))
+-- hs.hotkey.bind({'cmd'}, '6', (function()
+--   if hs.application.get('Franz') then
+--     hs.application.launchOrFocus('Franz')
+--     hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
+--   end
+-- end))
 
 hs.hotkey.bind({'cmd'}, '7', (function()
   if hs.application.get('Franz') then
@@ -593,25 +593,26 @@ hs.hotkey.bind({'option'}, '7', (function()
   end
 end))
 
-hs.hotkey.bind({'option'}, '8', (function()
-  hs.application.launchOrFocus('Calendar')
-end))
+-- hs.hotkey.bind({'option'}, '8', (function()
+--   -- hs.application.launchOrFocus('Calendar')
+-- end))
 
 hs.hotkey.bind({'cmd'}, '8', (function()
   -- hs.application.launchOrFocus('Franz')
   -- hs.application.get('Franz'):selectMenuItem({'Services', 'Google Calendar'})
-  hs.application.launchOrFocus('Google Calendar')
+  -- hs.application.launchOrFocus('Google Calendar')
+  hs.application.launchOrFocus('Calendar')
 end))
 
-hs.hotkey.bind({'option'}, '9', (function()
-  -- if hs.application.get('Franz') then
-  --   hs.application.launchOrFocus('Franz')
-  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 2'})
-  -- else
-  --   hs.application.launchOrFocus('Airmail 3')
-  -- end 
-  hs.application.launchOrFocus('Airmail 3')
-end))
+-- hs.hotkey.bind({'option'}, '9', (function()
+--   -- if hs.application.get('Franz') then
+--   --   hs.application.launchOrFocus('Franz')
+--   --   hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 2'})
+--   -- else
+--   --   hs.application.launchOrFocus('Airmail 3')
+--   -- end 
+--   -- hs.application.launchOrFocus('Airmail 3')
+-- end))
 
 hs.hotkey.bind({'cmd'}, '9', (function()
   -- if hs.application.get('Franz') then
@@ -621,6 +622,7 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
   -- hs.application.launchOrFocus('Gmail')
+  hs.application.launchOrFocus('Airmail 3')
 end))
 
 -- display Liip hours

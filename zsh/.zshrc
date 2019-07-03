@@ -116,3 +116,18 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Taxi for Liip Time tracking
 export PATH="$PATH:/Users/rdewolff/Library/Python/2.7/bin"
+
+
+# Brew node@10
+# install info see :
+#  https://apple.stackexchange.com/questions/171530/how-do-i-downgrade-node-or-install-a-specific-previous-version-using-homebrew
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+
+# 1 = only current folder
+# 2 = full path
+# Basic prompt, no colors : 
+# PROMPT='%m:%2~ %n%#'
+# Hour rocky prompt
+PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} : %{$fg[yellow]%}%2{$reset_color%}'
+PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%H:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_prompt_info)'
