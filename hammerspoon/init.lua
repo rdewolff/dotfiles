@@ -488,7 +488,9 @@ end))
 -- main browser
 hs.hotkey.bind({'cmd'}, '3', (function()
   -- focus on the current running browser (first get first focus)
-  if hs.application.get('Firefox Developer Edition') then
+  if hs.application.get('Vivaldi') then
+    hs.application.launchOrFocus('Vivaldi')
+  elseif hs.application.get('Firefox Developer Edition') then
     hs.application.launchOrFocus('Firefox Developer Edition')
   elseif hs.application.get('Firefox Nightly') then
     hs.application.launchOrFocus('Firefox Nightly')
@@ -502,8 +504,6 @@ hs.hotkey.bind({'cmd'}, '3', (function()
     hs.application.launchOrFocus('qutebrowser')
   elseif hs.application.get('Safari') then
     hs.application.launchOrFocus('Safari')
-  elseif hs.application.get('Vivaldi') then
-    hs.application.launchOrFocus('Vivaldi')
   else 
     -- default if none running
     hs.application.launchOrFocus('Vivaldi')
@@ -511,11 +511,9 @@ hs.hotkey.bind({'cmd'}, '3', (function()
 end))
 
 -- secondary browser
--- hs.hotkey.bind({'option'}, '3', (function()
---   if hs.application.get('Chromium') then
---     hs.application.launchOrFocus('Chromium')
---   end
--- end))
+hs.hotkey.bind({'option'}, '3', (function()
+  hs.application.launchOrFocus('Google Chrome')
+end))
 
 -- hs.hotkey.bind({'cmd', 'shift'}, '3', (function()
 --   if displayNotification then
@@ -622,7 +620,9 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
   -- hs.application.launchOrFocus('Gmail')
-  hs.application.launchOrFocus('Airmail 3')
+  -- hs.application.launchOrFocus('Airmail 3')
+  hs.application.launchOrFocus('Mailspring')
+
 end))
 
 -- display Liip hours
