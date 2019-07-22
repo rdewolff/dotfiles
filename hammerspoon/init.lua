@@ -542,9 +542,9 @@ hs.hotkey.bind({'cmd'}, '4', (function()
   hs.application.launchOrFocus('Simulator')
 end))
 
--- hs.hotkey.bind({'option'}, '5', (function()
---   hs.application.launchOrFocus('Typora')
--- end))
+hs.hotkey.bind({'cmd'}, '5', (function()
+  hs.application.launchOrFocus('Notes')
+end))
 
 -- hs.hotkey.bind({'cmd'}, '5', (function()
 --     hs.application.launchOrFocus('Notion')
