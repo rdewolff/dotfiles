@@ -79,3 +79,7 @@ yarn global add ignite-cli
 
 # Install Cocoa Pods
 sudo gem install cocoapods
+
+# regular tools
+brew install nmap
+brew install wget
