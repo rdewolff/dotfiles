@@ -532,14 +532,13 @@ end))
 
 hs.hotkey.bind({'option'}, '4', (function()
   hs.application.launchOrFocus('Reactotron')
-  -- Disabled, as this is currently causing a crash of the simulator �
-  -- hs.application.launchOrFocus('Simulator')
 end))
 
 hs.hotkey.bind({'cmd'}, '4', (function()
-  -- hs.application.launchOrFocus('Reactotron')
-  -- Disabled, as this is currently causing a crash of the simulator �
-  hs.application.launchOrFocus('Simulator')
+  -- classique method
+  -- hs.application.launchOrFocus('Simulator')
+  -- get and activate all windows
+  hs.application.get('Simulator'):activate(true)
 end))
 
 hs.hotkey.bind({'cmd'}, '5', (function()
