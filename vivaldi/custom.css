@@ -1,0 +1,15 @@
+#tabs-container .back, #tabs-container .forward {
+	height: 34px;
+	min-width: 34px;
+	margin: 0px;
+	display: unset;
+}
+
+/* Hide the trash can in the Window Tab panel and free up the space */
+div[data-id='trash'], div[data-id='trash'] * {
+	visibility: hidden;
+}
+#window-panel > header {
+	visibility: hidden;
+	height: 0;
+}
