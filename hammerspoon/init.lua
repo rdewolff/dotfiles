@@ -470,19 +470,23 @@ hs.hotkey.bind({'cmd'}, '1', (function()
 end))
 
 hs.hotkey.bind({'cmd'}, '2', (function()
-  hs.application.runningApplications()
-  if displayNotification then
-    hs.alert('Terminal')
-  end
-  -- start or activate corresponding Terminal
-  if hs.application.get('Hyper') then
-    hs.application.launchOrFocus('Hyper')
-  elseif hs.application.get('iTerm2') or hs.application.get('iTerm') then
-    hs.application.launchOrFocus('iTerm')
+
+  -- if VSCode is running, toggle displaying the terminal in VSCode
+  if hs.application.get('Code') then
+    hs.application.launchOrFocus('Visual Studio Code')
+    hs.eventtap.keyStroke({'ctrl'}, '`')
   else
-    -- default
-    hs.application.launchOrFocus('iTerm')
-  end
+    -- normal shortcut handling
+    if hs.application.get('Hyper') then
+      hs.application.launchOrFocus('Hyper')
+    elseif hs.application.get('iTerm2') or hs.application.get('iTerm') then
+      hs.application.launchOrFocus('iTerm')
+    else
+      -- default
+      hs.application.launchOrFocus('iTerm')
+    end
+  end 
+
 end))
 
 -- main browser
@@ -542,6 +546,10 @@ hs.hotkey.bind({'cmd'}, '4', (function()
 end))
 
 hs.hotkey.bind({'cmd'}, '5', (function()
+  hs.application.launchOrFocus('Notion')
+end))
+
+hs.hotkey.bind({'option'}, '5', (function()
   hs.application.launchOrFocus('Notes')
 end))
 
@@ -561,12 +569,13 @@ end))
 --   -- end
 -- end))
 
--- hs.hotkey.bind({'cmd'}, '6', (function()
---   if hs.application.get('Franz') then
---     hs.application.launchOrFocus('Franz')
---     hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
---   end
--- end))
+hs.hotkey.bind({'cmd'}, '6', (function()
+  hs.application.launchOrFocus('Spotify')
+  -- if hs.application.get('Franz') then
+  --   hs.application.launchOrFocus('Franz')
+  --   hs.application.get('Franz'):selectMenuItem({'Services', 'Zebra'})
+  -- end
+end))
 
 hs.hotkey.bind({'cmd'}, '7', (function()
   if hs.application.get('Franz') then
@@ -619,8 +628,8 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
   -- hs.application.launchOrFocus('Gmail')
-  -- hs.application.launchOrFocus('Airmail 3')
-  hs.application.launchOrFocus('Mailspring')
+  hs.application.launchOrFocus('Airmail 3')
+  -- hs.application.launchOrFocus('Mailspring')
 
 end))
 
@@ -683,20 +692,22 @@ end):start()
 -- ----------------------------------------------------------------------------
 -- Show some help about our shortcuts
 -- ----------------------------------------------------------------------------
--- hs.hotkey.bind({'cmd'}, '\'', (function()
---   hs.alert([[
---     Shortcuts
---     CMD + 1 - Code Editor
---     CMD + 2 - Terminal
---     CMD + 3 - Browser
---     CMD + 4 - iOS Simulator
---     CMD + 5 - Reactotron
---     CMD + 6 - iMessage
---     CMD + 7 - WhatsApp
---     CMD + 8 - Slack
---     CMD + 9 - Mails
---   ]])
--- end))
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, '/', (function()
+  hs.alert([[
+    ⌨️ Shortcuts
+    CMD + 1 - Code Editor (vscode)
+    CMD + 2 - Terminal (iterm)
+    CMD + 3 - Browser (vivaldi)
+    CMD + 4 - iOS Simulator
+    ALT + 4 - Reactotron
+    CMD + 5 - Notion
+    CMD + 6 - Music (spotify)
+    CMD + 7 - Slack
+    ALT + 7 - WhatsApp
+    CMD + 8 - Calendars
+    CMD + 9 - Mails
+  ]])
+end))
 
 
 -- ----------------------------------------------------------------------------
