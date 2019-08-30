@@ -470,23 +470,21 @@ hs.hotkey.bind({'cmd'}, '1', (function()
 end))
 
 hs.hotkey.bind({'cmd'}, '2', (function()
-
-  -- if VSCode is running, toggle displaying the terminal in VSCode
-  if hs.application.get('Code') then
-    hs.application.launchOrFocus('Visual Studio Code')
-    hs.eventtap.keyStroke({'ctrl'}, '`')
-  else
     -- normal shortcut handling
     if hs.application.get('Hyper') then
       hs.application.launchOrFocus('Hyper')
     elseif hs.application.get('iTerm2') or hs.application.get('iTerm') then
       hs.application.launchOrFocus('iTerm')
     else
-      -- default
-      hs.application.launchOrFocus('iTerm')
+            -- if VSCode is running, toggle displaying the terminal in VSCode
+      if hs.application.get('Code') then
+        hs.application.launchOrFocus('Visual Studio Code')
+        hs.eventtap.keyStroke({'ctrl'}, '`')
+      else
+        -- default
+        hs.application.launchOrFocus('iTerm')
+      end
     end
-  end 
-
 end))
 
 -- main browser
@@ -628,7 +626,7 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
   -- hs.application.launchOrFocus('Gmail')
-  hs.application.launchOrFocus('Airmail 3')
+  hs.application.launchOrFocus('Spark')
   -- hs.application.launchOrFocus('Mailspring')
 
 end))
