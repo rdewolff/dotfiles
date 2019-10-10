@@ -469,6 +469,13 @@ hs.hotkey.bind({'cmd'}, '1', (function()
 
 end))
 
+hs.hotkey.bind({'option'}, '1', (function()
+  if displayNotification then
+    hs.alert('Editor 2nd')
+  end
+  hs.application.launchOrFocus('Android Studio')
+end))
+
 hs.hotkey.bind({'cmd'}, '2', (function()
     -- normal shortcut handling
     if hs.application.get('Hyper') then

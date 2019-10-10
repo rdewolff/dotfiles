@@ -7,13 +7,16 @@ export ZSH=/Users/rdewolff/.oh-my-zsh
 # Fastlane
 PATH="$HOME/.fastlane/bin:$PATH"
 
-# Andeoid dev
+# Android dev
 # cf https://gist.github.com/patrickhammond/4ddbe49a67e5eb1b9c03
 export ANT_HOME_DIR=/usr/local/opt/ant
 export MAVEN_HOME=/usr/local/opt/maven
 export GRADLE_HOME=/usr/local/opt/gradle
 export ANDROID_HOME=/usr/local/Caskroom/android-sdk
-export ANDROID_NDK_HOME=/usr/local/Caskroom/android-ndk
+# installed via brew
+# export ANDROID_NDK_HOME=/usr/local/Caskroom/android-ndk
+# installed via Android Studio 
+export ANDROID_NDK_HOME=/Users/rdewolff/Library/Android/sdk/ndk/20.0.5594570
 
 export PATH=$ANT_HOME_DIR/bin:$PATH
 export PATH=$MAVEN_HOME/bin:$PATH
@@ -21,6 +24,11 @@ export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/3859397/build-tools/26.0.1:$PATH
+
+# Java JKDK 1.8 specific path]
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -79,7 +87,7 @@ export ANDROID_SDK_ROOT=/usr/local/Caskroom/android-sdk
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,6 +124,8 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Taxi for Liip Time tracking
 export PATH="$PATH:/Users/rdewolff/Library/Python/2.7/bin"
+alias ts='taxi status'
+alias tc='taxi commit'
 
 
 # Brew node@10
@@ -131,3 +141,11 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 # Hour rocky prompt
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} : %{$fg[yellow]%}%2{$reset_color%}'
 PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%H:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_prompt_info)'
+
+# tabtab source for stix package
+# uninstall by removing these lines or running `tabtab uninstall stix`
+[[ -f /Users/rdewolff/Projects/dotfiles/karabiner/yarn/global/node_modules/tabtab/.completions/stix.zsh ]] && . /Users/rdewolff/Projects/dotfiles/karabiner/yarn/global/node_modules/tabtab/.completions/stix.zsh
+
+
+# PGSQL path
+export PATH="/Applications/Postgres.app/Contents/Versions/11/bin/:$PATH"

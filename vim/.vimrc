@@ -1,8 +1,8 @@
 " UNMAP ARROW KEYS
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop
 
 set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
@@ -21,3 +21,5 @@ nnoremap k gk
 
 set incsearch      " search as characters are entered
 set hlsearch       " highlight matches
+
+syntax on
