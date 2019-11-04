@@ -1,3 +1,10 @@
+
+
+/*
+ * run Vivaldi with following params to be able to inspect it's UI :
+ * open /Applications/Vivaldi.app --args --debug-packed-apps --silent-debugger-extension-api
+ */
+
 #tabs-container .back, #tabs-container .forward {
 	height: 34px;
 	min-width: 34px;
@@ -12,4 +19,18 @@ div[data-id='trash'], div[data-id='trash'] * {
 #window-panel > header {
 	visibility: hidden;
 	height: 0;
+}
+
+/* Reduce Window Tab left margin */
+.panel .tree-row {
+  padding-left: 0px;
+}
+
+.panel .vivaldi-tree .tree-row label {
+	margin-left: -27px;
+}
+
+/* Hide the Window root tree icon */
+.vivaldi-tree .tree-row svg {
+	visibility: hidden;
 }
