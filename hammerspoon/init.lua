@@ -470,10 +470,11 @@ hs.hotkey.bind({'cmd'}, '1', (function()
 end))
 
 hs.hotkey.bind({'option'}, '1', (function()
-  if displayNotification then
-    hs.alert('Editor 2nd')
-  end
   hs.application.launchOrFocus('Android Studio')
+end))
+
+hs.hotkey.bind({'cmd', 'option'}, '1', (function()
+  hs.application.launchOrFocus('XCode')
 end))
 
 hs.hotkey.bind({'cmd'}, '2', (function()
@@ -499,6 +500,10 @@ hs.hotkey.bind({'cmd'}, '3', (function()
   -- focus on the current running browser (first get first focus)
   if hs.application.get('Vivaldi') then
     hs.application.launchOrFocus('Vivaldi')
+  elseif hs.application.get('Firefox') then
+    hs.application.launchOrFocus('Firefox')
+  elseif hs.application.get('qutebrowser') then
+    hs.application.launchOrFocus('qutebrowser')
   elseif hs.application.get('Firefox Developer Edition') then
     hs.application.launchOrFocus('Firefox Developer Edition')
   elseif hs.application.get('Firefox Nightly') then
@@ -507,10 +512,6 @@ hs.hotkey.bind({'cmd'}, '3', (function()
     hs.application.launchOrFocus('Google Chrome')
   elseif hs.application.get('Brave') then
     hs.application.launchOrFocus('Brave')
-  elseif hs.application.get('Firefox') then
-    hs.application.launchOrFocus('Firefox')
-  elseif hs.application.get('qutebrowser') then
-    hs.application.launchOrFocus('qutebrowser')
   elseif hs.application.get('Safari') then
     hs.application.launchOrFocus('Safari')
   else 
@@ -543,6 +544,11 @@ hs.hotkey.bind({'option'}, '4', (function()
   hs.application.launchOrFocus('Reactotron')
 end))
 
+-- This does not work, the app has no bundle identifier
+-- hs.hotkey.bind({'cmd', 'option'}, '4', (function()
+--   hs.application.launchOrFocus('qemu-system-x86_64')
+-- end))
+
 hs.hotkey.bind({'cmd'}, '4', (function()
   -- classique method
   -- hs.application.launchOrFocus('Simulator')
@@ -556,6 +562,10 @@ end))
 
 hs.hotkey.bind({'option'}, '5', (function()
   hs.application.launchOrFocus('Notes')
+end))
+
+hs.hotkey.bind({'cmd', 'option'}, '5', (function()
+  hs.application.launchOrFocus('Typora')
 end))
 
 -- hs.hotkey.bind({'cmd'}, '5', (function()
@@ -626,6 +636,13 @@ end))
 -- end))
 
 hs.hotkey.bind({'cmd'}, '9', (function()
+  if hs.application.get('Airmail') then
+    hs.application.launchOrFocus('Airmail 3')
+  elseif hs.application.get('Mail') then
+    hs.application.launchOrFocus('Mail')
+  elseif hs.application.get('Spark') then
+    hs.application.launchOrFocus('Mail')
+  else
   -- if hs.application.get('Franz') then
   --   hs.application.launchOrFocus('Franz')
   --   hs.application.get('Franz'):selectMenuItem({'Services', 'Gmail 1'})
@@ -633,9 +650,9 @@ hs.hotkey.bind({'cmd'}, '9', (function()
   --   hs.application.launchOrFocus('Airmail 3')
   -- end 
   -- hs.application.launchOrFocus('Gmail')
-  hs.application.launchOrFocus('Spark')
+  hs.application.launchOrFocus('Mail')
   -- hs.application.launchOrFocus('Mailspring')
-
+  end
 end))
 
 -- display Liip hours
@@ -664,7 +681,7 @@ end))
 
 -- Bind Hammerspoon reload config
 hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'e', (function()
-  local ejectSuccess, ejectResult = hs.fs.volume.eject('/Volumes/ChamTimeMachine')
+  local ejectSuccess, ejectResult = hs.fs.volume.eject('/Volumes/ChamBackup')
   hs.alert('Ejecting Hard Drive : ' .. ejectResult .. ')')
 end))
 
