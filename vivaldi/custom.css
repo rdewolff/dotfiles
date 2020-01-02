@@ -1,36 +1,13 @@
-
-
-/*
- * run Vivaldi with following params to be able to inspect it's UI :
- * open /Applications/Vivaldi.app --args --debug-packed-apps --silent-debugger-extension-api
- */
-
-#tabs-container .back, #tabs-container .forward {
-	height: 34px;
-	min-width: 34px;
-	margin: 0px;
-	display: unset;
+/* #panels-container {
+	position: fixed;
+	height: 100%;
+	max-width: 1vw;
+	opacity: 0;
+	z-index: 1;
+	transition: max-width .2s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity .1s linear .1s;
 }
-
-/* Hide the trash can in the Window Tab panel and free up the space */
-div[data-id='trash'], div[data-id='trash'] * {
-	visibility: hidden;
-}
-#window-panel > header {
-	visibility: hidden;
-	height: 0;
-}
-
-/* Reduce Window Tab left margin */
-.panel .tree-row {
-  padding-left: 0px;
-}
-
-.panel .vivaldi-tree .tree-row label {
-	margin-left: -27px;
-}
-
-/* Hide the Window root tree icon */
-.vivaldi-tree .tree-row svg {
-	visibility: hidden;
-}
+#panels-container:hover {
+	max-width: 50vw;
+	opacity: 1;
+	transition-delay: .1s;
+} */
