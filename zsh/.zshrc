@@ -29,6 +29,9 @@ export PATH=$ANDROID_HOME/3859397/build-tools/26.0.1:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
 
+# Pipx (used bu Liip/Wrench)
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -139,8 +142,12 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 # Basic prompt, no colors : 
 # PROMPT='%m:%2~ %n%#'
 # Hour rocky prompt
-PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} : %{$fg[yellow]%}%2{$reset_color%}'
-PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%H:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_prompt_info)'
+# PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} : %{$fg[yellow]%}%2{$reset_color%}'
+# Like : 
+# rdewolff@ChamBookPro [15:33:42] [~/Projects/meetme/dev/meetme-web] git:(master)
+#PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%H:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_prompt_info)'
+
+PROMPT='%{$fg[green]%}%D{[%H:%M:%S]} %{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%} $(git_prompt_info)'
 
 # tabtab source for stix package
 # uninstall by removing these lines or running `tabtab uninstall stix`
@@ -149,3 +156,9 @@ PROMPT='%{$fg_bold[green]%}%n@%m %{$fg[blue]%}%D{[%H:%M:%S]} %{$reset_color%}%{$
 
 # PGSQL path
 export PATH="/Applications/Postgres.app/Contents/Versions/11/bin/:$PATH"
+
+# rbenv 
+eval "$(rbenv init -)"
+
+# Created by `userpath` on 2019-11-11 09:18:22
+export PATH="$PATH:/Users/rdewolff/.local/bin"
