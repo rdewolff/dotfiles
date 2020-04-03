@@ -376,14 +376,6 @@ function chain(movements)
 end
 
 -- ----------------------------------------------------------------------------
--- Enable/disable Karabiner with VIM mode
--- ----------------------------------------------------------------------------
-
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'v', (function()
-  hs.alert('Karabiner')
-end))
-
--- ----------------------------------------------------------------------------
 -- Timer creation (let's cook theses pasta perfectly al'dente)
 -- TODO: add a field to set up a description
 -- TODO: add a new key to display the list of the existing timers /!\
@@ -460,10 +452,12 @@ hs.hotkey.bind({'cmd'}, '1', (function()
     hs.application.launchOrFocus('MacVim')
   elseif hs.application.get('Emacs') then
     hs.application.launchOrFocus('Emacs')
+  elseif hs.application.get('VSCodium') then
+    hs.application.launchOrFocus('VSCodium')
   else
     -- default
     -- problem sometimes starting a new instance of the app : https://github.com/Hammerspoon/hammerspoon/issues/288
-    hs.application.launchOrFocus('Visual Studio Code')
+    hs.application.launchOrFocus('VSCodium')
   end
   --
 
@@ -498,16 +492,20 @@ end))
 -- main browser
 hs.hotkey.bind({'cmd'}, '3', (function()
   -- focus on the current running browser (first get first focus)
-  if hs.application.get('Vivaldi') then
-    hs.application.launchOrFocus('Vivaldi')
-  elseif hs.application.get('Firefox') then
+  if hs.application.get('Firefox') then
     hs.application.launchOrFocus('Firefox')
+  elseif hs.application.get('Brave Browser') then
+    hs.application.launchOrFocus('Brave Browser')
+  elseif hs.application.get('Vivaldi') then
+    hs.application.launchOrFocus('Vivaldi')
   elseif hs.application.get('qutebrowser') then
     hs.application.launchOrFocus('qutebrowser')
   elseif hs.application.get('Firefox Developer Edition') then
     hs.application.launchOrFocus('Firefox Developer Edition')
   elseif hs.application.get('Firefox Nightly') then
     hs.application.launchOrFocus('Firefox Nightly')
+  elseif hs.application.get('Chromium') then
+    hs.application.launchOrFocus('Chromium')
   elseif hs.application.get('Google Chrome') then
     hs.application.launchOrFocus('Google Chrome')
   elseif hs.application.get('Brave') then
@@ -516,13 +514,35 @@ hs.hotkey.bind({'cmd'}, '3', (function()
     hs.application.launchOrFocus('Safari')
   else 
     -- default if none running
-    hs.application.launchOrFocus('Vivaldi')
+    hs.application.launchOrFocus('Chromium')
   end
 end))
 
 -- secondary browser
 hs.hotkey.bind({'option'}, '3', (function()
-  hs.application.launchOrFocus('Google Chrome')
+  
+  if hs.application.get('Brave Browser') then
+    hs.application.launchOrFocus('Brave Browser')
+  elseif hs.application.get('Google Chrome') then
+    hs.application.launchOrFocus('Google Chrome')
+  elseif hs.application.get('qutebrowser') then
+    hs.application.launchOrFocus('qutebrowser')
+  elseif hs.application.get('Firefox Developer Edition') then
+    hs.application.launchOrFocus('Firefox Developer Edition')
+  elseif hs.application.get('Firefox Nightly') then
+    hs.application.launchOrFocus('Firefox Nightly')
+  elseif hs.application.get('Chromium') then
+    hs.application.launchOrFocus('Chromium')
+  elseif hs.application.get('Brave') then
+    hs.application.launchOrFocus('Brave')
+  elseif hs.application.get('Safari') then
+    hs.application.launchOrFocus('Safari')
+  elseif hs.application.get('Vivaldi') then
+    hs.application.launchOrFocus('Vivaldi')
+  else 
+    -- default if none running
+    hs.application.launchOrFocus('Brave Browser')
+  end
 end))
 
 -- hs.hotkey.bind({'cmd', 'shift'}, '3', (function()
@@ -612,6 +632,10 @@ hs.hotkey.bind({'option'}, '7', (function()
   else
     hs.application.launchOrFocus('WhatsApp')
   end
+end))
+
+hs.hotkey.bind({'cmd', 'option'}, '7', (function()
+  hs.application.launchOrFocus('Messages')
 end))
 
 -- hs.hotkey.bind({'option'}, '8', (function()
@@ -714,113 +738,116 @@ end):start()
 -- ----------------------------------------------------------------------------
 -- Show some help about our shortcuts
 -- ----------------------------------------------------------------------------
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, '/', (function()
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, '-', (function()
   hs.alert([[
     ⌨️ Shortcuts
-    CMD + 1 - Code Editor (vscode)
-    CMD + 2 - Terminal (iterm)
-    CMD + 3 - Browser (vivaldi)
-    CMD + 4 - iOS Simulator
-    ALT + 4 - Reactotron
-    CMD + 5 - Notion
-    CMD + 6 - Music (spotify)
-    CMD + 7 - Slack
-    ALT + 7 - WhatsApp
-    CMD + 8 - Calendars
-    CMD + 9 - Mails
+    CMD + 1     - Code Editor (vscode)
+    CMD + 2     - Terminal (iterm)
+    CMD + 3     - Browser (vivaldi)
+    CMD + 4     - iOS Simulator
+    ALT + 4     - Reactotron
+    CMD + 5     - Notion
+    ALT + 5     - Notes
+    CMD+ALT + 5 - Typora
+    CMD + 6     - Music (spotify)
+    CMD + 7     - Slack
+    ALT + 7     - WhatsApp
+    CMD+ALT + 7 - Messages
+    CMD + 8     - Calendars
+    CMD + 9     - Mails
   ]])
 end))
 
 
 -- ----------------------------------------------------------------------------
 -- Window management controls
--- ----------------------------------------------------------------------------
--- move window to next screen
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'space', (function()
-  if displayNotification then
-    hs.alert('Move active window to next screen')
-  end
-  local win = hs.window.focusedWindow()
-  if (win) then
-    --win:moveToScreen(hs.screen.get(second_monitor))
-    win:moveToScreen(win:screen():next())
-  end
-end))
+-- -- ----------------------------------------------------------------------------
+-- -- move window to next screen
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'space', (function()
+--   if displayNotification then
+--     hs.alert('Move active window to next screen')
+--   end
+--   local win = hs.window.focusedWindow()
+--   if (win) then
+--     --win:moveToScreen(hs.screen.get(second_monitor))
+--     win:moveToScreen(win:screen():next())
+--   end
+-- end))
 
--- center window on screen
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'c', (function()
-  if displayNotification then
-    hs.alert('Center')
-  end
-  hs.window.focusedWindow():centerOnScreen()
-end))
+-- -- center window on screen
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'c', (function()
+--   if displayNotification then
+--     hs.alert('Center')
+--   end
+--   hs.window.focusedWindow():centerOnScreen()
+-- end))
 
--- make window fullscreen
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'return', (function()
-  if displayNotification then
-    hs.alert('Fullscreen')
-  end
-  hs.window.focusedWindow():maximize()
-end))
+-- -- make window fullscreen
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'return', (function()
+--   if displayNotification then
+--     hs.alert('Fullscreen')
+--   end
+--   hs.window.focusedWindow():maximize()
+-- end))
 
--- make window smaller
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  -- resize window
-  f.w = f.w - 30
-  f.h = f.h - 30
-  win:setFrame(f)
-end)
+-- -- make window smaller
+-- hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
+--   local win = hs.window.focusedWindow()
+--   local f = win:frame()
+--   -- resize window
+--   f.w = f.w - 30
+--   f.h = f.h - 30
+--   win:setFrame(f)
+-- end)
 
--- make the window bigger
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, ".", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  -- resize window
-  f.w = f.w + 30
-  f.h = f.h + 30
-  win:setFrame(f)
-end)
+-- -- make the window bigger
+-- hs.hotkey.bind({"cmd", "alt", "ctrl"}, ".", function()
+--   local win = hs.window.focusedWindow()
+--   local f = win:frame()
+--   -- resize window
+--   f.w = f.w + 30
+--   f.h = f.h + 30
+--   win:setFrame(f)
+-- end)
 
--- windows manipulation and positioning
-hs.hotkey.bind({'ctrl', 'alt'}, 'k', chain({
-  grid.topHalf,
-  grid.topThird,
-  grid.topTwoThirds,
-}))
+-- -- windows manipulation and positioning
+-- hs.hotkey.bind({'ctrl', 'alt'}, 'k', chain({
+--   grid.topHalf,
+--   grid.topThird,
+--   grid.topTwoThirds,
+-- }))
 
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'l', chain({
-  grid.rightHalf,
-  grid.rightThird,
-  grid.rightTwoThirds,
-}))
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'l', chain({
+--   grid.rightHalf,
+--   grid.rightThird,
+--   grid.rightTwoThirds,
+-- }))
 
-hs.hotkey.bind({'ctrl', 'alt'}, 'j', chain({
-  grid.bottomHalf,
-  grid.bottomThird,
-  grid.bottomTwoThirds,
-}))
+-- hs.hotkey.bind({'ctrl', 'alt'}, 'j', chain({
+--   grid.bottomHalf,
+--   grid.bottomThird,
+--   grid.bottomTwoThirds,
+-- }))
 
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'h', chain({
-  grid.leftHalf,
-  grid.leftThird,
-  grid.leftTwoThirds,
-}))
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'h', chain({
+--   grid.leftHalf,
+--   grid.leftThird,
+--   grid.leftTwoThirds,
+-- }))
 
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'k', chain({
-  grid.topLeft,
-  grid.topRight,
-  grid.bottomRight,
-  grid.bottomLeft,
-}))
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'k', chain({
+--   grid.topLeft,
+--   grid.topRight,
+--   grid.bottomRight,
+--   grid.bottomLeft,
+-- }))
 
-hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'j', chain({
-  grid.fullScreen,
-  grid.centeredBig,
-  grid.centeredMedium,
-  grid.centeredSmall,
-}))
+-- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'j', chain({
+--   grid.fullScreen,
+--   grid.centeredBig,
+--   grid.centeredMedium,
+--   grid.centeredSmall,
+-- }))
 
 -- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'f1', (function()
 --   hs.alert('One-monitor layout')
@@ -961,9 +988,9 @@ hs.hotkey.bind({"cmd","alt","control"}, "D", mouseHighlight)
 -- Windows hints
 -- ----------------------------------------------------------------------------
 -- Fast windows switching via letter
-hs.hotkey.bind({'alt'}, 'tab', (function()
-  hs.hints.windowHints()
-end))
+--hs.hotkey.bind({'alt'}, 'tab', (function()
+--  hs.hints.windowHints()
+--end))
 
 -- ----------------------------------------------------------------------------
 -- Accented characters 

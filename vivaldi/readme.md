@@ -1,3 +1,5 @@
+# Update Vivaldi customer hack 
+
 I wanted to share my current setup. Don't know how many Vivaldi modders are out there using macOS, but I hope it will help at least some of you automate the most repetitive tasks. Following a complete rundown of the steps required:
 
 Get your files ready. Personally I'm using 3 individual ones.
@@ -5,6 +7,8 @@ Get your files ready. Personally I'm using 3 individual ones.
 - upviv.sh to patch the application whenever an update has finished installing.
 - modviv.sh to startup Vivaldi when you want to inspect its UI.
 - bakviv.sh to backup the files you are currently working on outside the browser
+
+## Instructions
 
 The files use the extension .sh so they get opened by your default text editor automatically. I keep them on Dropbox just like custom.css and custom.js for backup. To run these scripts we will have to make them executable and change the file extension.
 

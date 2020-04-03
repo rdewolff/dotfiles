@@ -27,13 +27,24 @@ brew cask install insomnia # rest client
 brew cask install sketch
 brew cask install skitch
 brew cask install slack
-brew cask install visual-studio-code
+# brew cask install visual-studio-code
+brew cask install vscodium # no analytics tracker for god's sake
 brew cask install whatsapp
 brew cask install spotify
+brew cask install sonos
 brew cask install reactotron
 brew cask install font-fira-code
 brew tap homebrew/cask-drivers
 brew cask install itsycal # small calendar in the menu bar
+brew cask install barrier
+brew cask install notion
+brew cask install discord
+brew cask install signal
+brew cask install telegram
+brew cask install amethyst
+brew cask install postman
+brew cask install mpv
+
 
 # The Command Line Tools Package
 xcode-select --install
@@ -83,3 +94,4 @@ sudo gem install cocoapods
 # regular tools
 brew install nmap
 brew install wget
+brew install httpie

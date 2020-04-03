@@ -1,4 +1,9 @@
-/* #panels-container {
+
+/**
+ * Auto hide left pannel, shown on mouse over
+ */
+/*
+#panels-container {
 	position: fixed;
 	height: 100%;
 	max-width: 1vw;
@@ -10,4 +15,25 @@
 	max-width: 50vw;
 	opacity: 1;
 	transition-delay: .1s;
+}
+*/
+
+/**
+ * Make the tree more compatc
+ */
+/* .vivaldi-tree  {
+	margin-left: -40px
 } */
+
+/** 
+ * Hide the "Closed Tabs"
+ */
+div[data-id="trash"] {
+	visibility: hidden;
+}
+
+/* remove the header (WIP) */ 
+#window-panel header {
+	/* visibility: hidden; */
+}
+

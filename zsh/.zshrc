@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='code' # VSCodium
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -162,3 +163,7 @@ eval "$(rbenv init -)"
 
 # Created by `userpath` on 2019-11-11 09:18:22
 export PATH="$PATH:/Users/rdewolff/.local/bin"
+
+source /Users/rdewolff/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
