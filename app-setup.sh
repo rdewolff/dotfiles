@@ -7,7 +7,7 @@ brew upgrade
 # add some casks
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 
 # Install dev tools
 brew install git
