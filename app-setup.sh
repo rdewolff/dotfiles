@@ -36,13 +36,11 @@ brew cask install sonos
 brew cask install reactotron
 brew cask install font-fira-code
 brew tap homebrew/cask-drivers
-brew cask install itsycal # small calendar in the menu bar
 brew cask install barrier
 brew cask install notion
 brew cask install discord
 brew cask install signal
 brew cask install telegram
-brew cask install amethyst
 brew cask install postman
 brew cask install mpv
 brew cask install istat-menus
