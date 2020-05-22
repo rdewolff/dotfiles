@@ -99,9 +99,13 @@ brew install mas # this took ages to install on 22.05.2020... only 11MB but thei
 
 # Signin to Apple Store
 # seems not working with Mojave, needs to do this manually
-mas signin rdewolff@gmail.com
+# mas signin rdewolff@gmail.com
 
-# Xcode install
-mas install 497799835 # Xcode
-mas install 425955336 # Skitch
-mas install 918858936 # Airmail 3
+# Xcode install - disabled, too slow
+# mas install 497799835 # Xcode
+# mas install 425955336 # Skitch
+# mas install 918858936 # Airmail 3
+
+echo 'You need to install Xcode and Skitch via App Store'
+
+echo 'For nvm (node version manager), follow the steps detailed here : https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc'
