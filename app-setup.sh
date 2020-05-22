@@ -27,6 +27,7 @@ brew cask install insomnia # rest client
 brew cask install sketch
 brew cask install skitch
 brew cask install slack
+brew cask install choosy
 # brew cask install visual-studio-code
 brew cask install vscodium # no analytics tracker for god's sake
 brew cask install whatsapp
@@ -35,40 +36,53 @@ brew cask install sonos
 brew cask install reactotron
 brew cask install font-fira-code
 brew tap homebrew/cask-drivers
-brew cask install itsycal # small calendar in the menu bar
 brew cask install barrier
 brew cask install notion
 brew cask install discord
 brew cask install signal
 brew cask install telegram
-brew cask install amethyst
 brew cask install postman
 brew cask install mpv
+brew cask install istat-menus
 
 
+# Dev
 # The Command Line Tools Package
 xcode-select --install
 # this might be already installed as we use `git` to clone this repo
 
-# Mac App Store command line interface
-brew install mas
+# React Native
+brew install watchman
+brew tap AdoptOpenJDK/openjdk
+# brew cask install adoptopenjdk8 # this has an issue, we use the following instead :
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 
-# Signin to Apple Store
-# seems not working with Mojave, needs to do this manually
-mas signin rdewolff@gmail.com
+# Docker
+brew cask install docker
 
-# Xcode install
-mas install 497799835 # Xcode
-mas install 425955336 # Skitch
-mas install 918858936 # Airmail 3
+# React Native
+npm install -g react-native-cli
 
+# Ignite CLI
+yarn global add ignite-cli
+
+# Feather JS
+yarn global add @feathersjs/cli
+
+# Install Cocoa Pods
+sudo gem install cocoapods
+
+# regular tools
+brew install nmap wget httpie
 # Remove outdated versions from the cellar.
 brew cleanup
 
 # Oh my ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# use Zsh as bash shell
+# Yabai tile window manager, move windows with key+mouse 🎉
+brew install koekeishiya/formulae/yabai
+
 
 # Folder
 mkdir -p ~/Projects/
@@ -77,21 +91,21 @@ mkdir -p ~/Playgrounds/
 # Add the private key to the ssh-agent
 ssh-add -K ~/.ssh/rdewolff
 
-# Dev
-# React Native
-brew install watchman
-brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
-npm install -g react-native-cli
 
 
-# Ignite CLI
-yarn global add ignite-cli
 
-# Install Cocoa Pods
-sudo gem install cocoapods
+# Mac App Store command line interface
+brew install mas # this took ages to install on 22.05.2020... only 11MB but their network seems really slow.
 
-# regular tools
-brew install nmap
-brew install wget
-brew install httpie
+# Signin to Apple Store
+# seems not working with Mojave, needs to do this manually
+# mas signin rdewolff@gmail.com
+
+# Xcode install - disabled, too slow
+# mas install 497799835 # Xcode
+# mas install 425955336 # Skitch
+# mas install 918858936 # Airmail 3
+
+echo 'You need to install Xcode and Skitch via App Store'
+
+echo 'For nvm (node version manager), follow the steps detailed here : https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc'
