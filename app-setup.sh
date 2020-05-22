@@ -27,6 +27,7 @@ brew cask install insomnia # rest client
 brew cask install sketch
 brew cask install skitch
 brew cask install slack
+brew cask install choosy
 # brew cask install visual-studio-code
 brew cask install vscodium # no analytics tracker for god's sake
 brew cask install whatsapp
