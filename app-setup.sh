@@ -45,6 +45,8 @@ brew cask install telegram
 brew cask install amethyst
 brew cask install postman
 brew cask install mpv
+brew cask install istat-menus
+
 
 # Dev
 # The Command Line Tools Package
@@ -56,6 +58,9 @@ brew install watchman
 brew tap AdoptOpenJDK/openjdk
 # brew cask install adoptopenjdk8 # this has an issue, we use the following instead :
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+
+# Docker
+brew cask install docker
 
 # React Native
 npm install -g react-native-cli
