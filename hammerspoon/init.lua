@@ -759,105 +759,121 @@ hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, '-', (function()
 end))
 
 
+
 -- ----------------------------------------------------------------------------
 -- Window management controls
--- -- ----------------------------------------------------------------------------
--- -- move window to next screen
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- Using Yabai
+-- ----------------------------------------------------------------------------
+
+-- move window to next screen
 -- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'space', (function()
---   if displayNotification then
---     hs.alert('Move active window to next screen')
---   end
---   local win = hs.window.focusedWindow()
---   if (win) then
---     --win:moveToScreen(hs.screen.get(second_monitor))
---     win:moveToScreen(win:screen():next())
---   end
+--   hs.execute('yabai window -m --display next', true)
+-- working from one screen to the other, but not cycling
 -- end))
 
--- -- center window on screen
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'c', (function()
---   if displayNotification then
---     hs.alert('Center')
---   end
---   hs.window.focusedWindow():centerOnScreen()
--- end))
+-- ----------------------------------------------------------------------------
+-- Using Hammerspoon 
+-- ----------------------------------------------------------------------------
+-- 
+-- -- move window to next screen
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'space', (function()
+  if displayNotification then
+    hs.alert('Move active window to next screen')
+  end
+  local win = hs.window.focusedWindow()
+  if (win) then
+    --win:moveToScreen(hs.screen.get(second_monitor))
+    win:moveToScreen(win:screen():next())
+  end
+end))
 
--- -- make window fullscreen
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'return', (function()
---   if displayNotification then
---     hs.alert('Fullscreen')
---   end
---   hs.window.focusedWindow():maximize()
--- end))
+-- center window on screen
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'c', (function()
+  if displayNotification then
+    hs.alert('Center')
+  end
+  hs.window.focusedWindow():centerOnScreen()
+end))
 
--- -- make window smaller
--- hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
---   -- resize window
---   f.w = f.w - 30
---   f.h = f.h - 30
---   win:setFrame(f)
--- end)
+-- make window fullscreen
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'return', (function()
+  if displayNotification then
+    hs.alert('Fullscreen')
+  end
+  hs.window.focusedWindow():maximize()
+end))
 
--- -- make the window bigger
--- hs.hotkey.bind({"cmd", "alt", "ctrl"}, ".", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
---   -- resize window
---   f.w = f.w + 30
---   f.h = f.h + 30
---   win:setFrame(f)
--- end)
+-- make window smaller
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  -- resize window
+  f.w = f.w - 30
+  f.h = f.h - 30
+  win:setFrame(f)
+end)
 
--- -- windows manipulation and positioning
--- hs.hotkey.bind({'ctrl', 'alt'}, 'k', chain({
---   grid.topHalf,
---   grid.topThird,
---   grid.topTwoThirds,
--- }))
+-- make the window bigger
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, ".", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  -- resize window
+  f.w = f.w + 30
+  f.h = f.h + 30
+  win:setFrame(f)
+end)
 
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'l', chain({
---   grid.rightHalf,
---   grid.rightThird,
---   grid.rightTwoThirds,
--- }))
+-- windows manipulation and positioning
+hs.hotkey.bind({'ctrl', 'alt'}, 'k', chain({
+  grid.topHalf,
+  grid.topThird,
+  grid.topTwoThirds,
+}))
 
--- hs.hotkey.bind({'ctrl', 'alt'}, 'j', chain({
---   grid.bottomHalf,
---   grid.bottomThird,
---   grid.bottomTwoThirds,
--- }))
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'l', chain({
+  grid.rightHalf,
+  grid.rightThird,
+  grid.rightTwoThirds,
+}))
 
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'h', chain({
---   grid.leftHalf,
---   grid.leftThird,
---   grid.leftTwoThirds,
--- }))
+hs.hotkey.bind({'ctrl', 'alt'}, 'j', chain({
+  grid.bottomHalf,
+  grid.bottomThird,
+  grid.bottomTwoThirds,
+}))
 
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'k', chain({
---   grid.topLeft,
---   grid.topRight,
---   grid.bottomRight,
---   grid.bottomLeft,
--- }))
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'h', chain({
+  grid.leftHalf,
+  grid.leftThird,
+  grid.leftTwoThirds,
+}))
 
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'j', chain({
---   grid.fullScreen,
---   grid.centeredBig,
---   grid.centeredMedium,
---   grid.centeredSmall,
--- }))
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'k', chain({
+  grid.topLeft,
+  grid.topRight,
+  grid.bottomRight,
+  grid.bottomLeft,
+}))
 
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'f1', (function()
---   hs.alert('One-monitor layout')
---   activateLayout(1)
--- end))
---
--- hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'f2', (function()
---   hs.alert('Two-monitor layout')
---   activateLayout(2)
--- end))
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'j', chain({
+  grid.fullScreen,
+  grid.centeredBig,
+  grid.centeredMedium,
+  grid.centeredSmall,
+}))
+
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'f1', (function()
+  hs.alert('One-monitor layout')
+  activateLayout(1)
+end))
+
+hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'f2', (function()
+  hs.alert('Two-monitor layout')
+  activateLayout(2)
+end))
 
 -- ----------------------------------------------------------------------------
 -- Auto reload config
