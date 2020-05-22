@@ -1,3 +1,160 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Completely hide tabs strip */
 #TabsToolbar {
-  visibility: collapse !important;
- }
+  display: none;
+}
+
+/* Dynamic sidebar */
+:root{
+  --uc-window-control-width: 138px; /* Space reserved for window controls */
+  --uc-window-drag-space-width: 4px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
+  --uc-toolbar-height: 32px;
+}
+
+#nav-bar::before,
+#nav-bar::after{
+  content: "";
+  display: -moz-box;
+  width: var(--uc-window-drag-space-width);
+}
+
+toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width) + var(--uc-window-drag-space-width,0px)) }
+
+:root:not([uidensity="compact"]){--uc-toolbar-height: 38px}
+
+#TabsToolbar{ visibility: collapse !important }
+
+:root:not([inFullscreen]) #nav-bar{
+  margin-top: calc(0px - var(--uc-toolbar-height));
+}
+
+#toolbar-menubar{
+  min-height:unset !important;
+  height:var(--uc-toolbar-height) !important;
+  position: relative;
+}
+
+#main-menubar{
+  -moz-box-flex: 1;
+  background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor);
+  background-clip: padding-box;
+  border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
+}
+
+#toolbar-menubar:not([inactive]){ z-index: 2 }
+#toolbar-menubar[inactive] > #menubar-items {
+	opacity: 0;
+	pointer-events: none;
+	margin-left: var(--uc-window-drag-space-width,0px)
+}
+
+  #navigator-toolbox {
+    border-bottom: 0 !important;
+  }
+
+  #sidebar-box:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 35px;
+    position: fixed;
+    z-index: 1;
+    transition: all 0.2s ease;
+    border-right: 1px solid #333; /* Adjust to fit your theme */
+  }
+
+  #sidebar-box:hover,
+  #sidebar-header,
+  #sidebar {
+    width: 20vw !important;
+  }
+  
+  #sidebar-splitter {
+    display: none;
+  }
+
+  /*
+   * Adjust to your settings!
+   * You need to subtract the height of the panels above sidebar: nav bar,
+   * bookmarks bar, etc. -- whichever is enabled/displayed.
+   *
+   * You can see which mode (normal, compact or touch) you’re in by going to:
+   * Firefox Menu ? Customize… (at the bottom of the screen) ? Density
+   *
+   *                | normal | compact | touch
+   * Menu bar       |  27px  |   27px  |  27px
+   * Tab bar        |  33px  |   29px  |  41px
+   * Nav bar        |  40px  |   32px  |  40px
+   * Bookmarks bar  |  23px  |   21px  |  27px
+   *
+   * Example:
+   * - tab bar is hidden with CSS above (0px)
+   * - menu and bookmarks bar are hidden by default (0px)
+   * - that only leaves nav bar = 40px in normal mode (default)
+   */
+  #sidebar-box {
+    height: 100vh;
+  }
+
+  #sidebar {
+    flex-grow: 1;
+  }
+
+  #sidebar-box:not([hidden]) ~ #appcontent {
+    margin-left: 35px;
+  }
+
+  #main-window[inFullscreen][inDOMFullscreen] #appcontent {
+    margin-left: 0;
+  }
+
+  #main-window[inFullscreen] #sidebar-box {
+    height: 100vh;
+  }
+
+  /* Place sidebar header at the bottom */
+  /*
+  #sidebar-box {
+    flex-direction: column-reverse;
+  }
+  */
+
+  /* Hide sidebar header */
+  /*
+  #sidebar-header {
+    display: none;
+  }
+  */
+}
+
+#pocket-button-box,
+#pageActionButton,
+#pageActionSeparator,
+.urlbar-go-button
+{
+    display: none !important;
+}
+
+toolbarspring { -moz-box-flex: unset !important;}
+
+/* Remove back button circle */
+#back-button:not(:hover),
+#back-button:not(:hover) > .toolbarbutton-icon {
+background: transparent !important;
+border: none !important;
+box-shadow: none !important;
+}
+
+#back-button:hover,
+#back-button:hover > .toolbarbutton-icon {
+border: none !important;
+border-radius: 2px !important;
+}  
+
+#back-button {
+	fill-opacity: 1 !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+.toolbarbutton-1 { opacity: 1 !important;}
