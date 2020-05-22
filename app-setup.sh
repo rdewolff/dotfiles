@@ -45,13 +45,53 @@ brew cask install amethyst
 brew cask install postman
 brew cask install mpv
 
-
+# Dev
 # The Command Line Tools Package
 xcode-select --install
 # this might be already installed as we use `git` to clone this repo
 
+# React Native
+brew install watchman
+brew tap AdoptOpenJDK/openjdk
+# brew cask install adoptopenjdk8 # this has an issue, we use the following instead :
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+
+# React Native
+npm install -g react-native-cli
+
+# Ignite CLI
+yarn global add ignite-cli
+
+# Feather JS
+yarn global add @feathersjs/cli
+
+# Install Cocoa Pods
+sudo gem install cocoapods
+
+# regular tools
+brew install nmap wget httpie
+# Remove outdated versions from the cellar.
+brew cleanup
+
+# Oh my ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Yabai tile window manager, move windows with key+mouse 🎉
+brew install koekeishiya/formulae/yabai
+
+
+# Folder
+mkdir -p ~/Projects/
+mkdir -p ~/Playgrounds/
+
+# Add the private key to the ssh-agent
+ssh-add -K ~/.ssh/rdewolff
+
+
+
+
 # Mac App Store command line interface
-brew install mas
+brew install mas # this took ages to install on 22.05.2020... only 11MB but their network seems really slow.
 
 # Signin to Apple Store
 # seems not working with Mojave, needs to do this manually
@@ -61,37 +101,3 @@ mas signin rdewolff@gmail.com
 mas install 497799835 # Xcode
 mas install 425955336 # Skitch
 mas install 918858936 # Airmail 3
-
-# Remove outdated versions from the cellar.
-brew cleanup
-
-# Oh my ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# use Zsh as bash shell
-
-# Folder
-mkdir -p ~/Projects/
-mkdir -p ~/Playgrounds/
-
-# Add the private key to the ssh-agent
-ssh-add -K ~/.ssh/rdewolff
-
-# Dev
-# React Native
-brew install watchman
-brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
-npm install -g react-native-cli
-
-
-# Ignite CLI
-yarn global add ignite-cli
-
-# Install Cocoa Pods
-sudo gem install cocoapods
-
-# regular tools
-brew install nmap
-brew install wget
-brew install httpie
