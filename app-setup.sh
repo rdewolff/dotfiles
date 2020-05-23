@@ -17,7 +17,6 @@ brew install yarn
 brew install tig
 brew install zsh
 
-# Install CLI tools
 brew cask install hammerspoon
 brew cask install lastpass
 brew cask install google-chrome
@@ -56,6 +55,8 @@ brew install watchman
 brew tap AdoptOpenJDK/openjdk
 # brew cask install adoptopenjdk8 # this has an issue, we use the following instead :
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+brew cask install android-studio
+brew install fastlane
 
 # Docker
 brew cask install docker
