@@ -163,7 +163,8 @@ eval "$(rbenv init -)"
 
 # Created by `userpath` on 2019-11-11 09:18:22
 export PATH="$PATH:/Users/rdewolff/.local/bin"
-
 source /Users/rdewolff/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
