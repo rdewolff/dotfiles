@@ -56,6 +56,7 @@ brew tap AdoptOpenJDK/openjdk
 # brew cask install adoptopenjdk8 # this has an issue, we use the following instead :
 brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 brew cask install android-studio
+brew cask install android-platform-tools # adb and other tools
 brew install fastlane
 
 # Docker
